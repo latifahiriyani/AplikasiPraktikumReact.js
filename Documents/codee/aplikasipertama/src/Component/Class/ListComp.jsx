@@ -27,6 +27,7 @@ render() {
     return (
         <Container>
             <h2>Data Mahasiswa</h2>
+            <NavLink><Button color="success">Tambah Data</Button></NavLink>
             <hr/>
             <Table className="table=bordered">
                 <thead>
