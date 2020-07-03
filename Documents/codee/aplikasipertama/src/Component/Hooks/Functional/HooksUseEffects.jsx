@@ -3,12 +3,19 @@ import { Container } from 'reactstrap'
 
 function HooksUseEffect() {
 
-    const[namaLengkap, setNamaLengkap] = useState({nama:'', marga:''})
+    const[namaLengkap, setNamaLengkap] = useState({nama:'Andika', marga:'Wijaya'})
+
+    useEffect(()=>{
+        console.log("Memanggil Use Effects")
+        setNamaLengkap({nama:'Vincent', marga:'Tan'})
+    },[])
 
     return (
        <Container>
             <h3>Profil User</h3>
-            </Container>
+            <h4>Nama : {namaLengkap.nama}</h4>
+            <h4>Marga : {namaLengkap.marga}</h4>
+        </Container>
     )
 }
 
