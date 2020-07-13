@@ -13,6 +13,7 @@ import {
     DropdownItem,
     NavbarText
 } from 'reactstrap';
+import {Button} from 'reactstrap'
 
 const NavbarComp = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,12 @@ const NavbarComp = (props) => {
                             <NavLink href="/useeffects">Use Effects</NavLink>
                         </NavItem>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+                    <NavbarText>
+                        <Button color="danger">
+                            <i className="fa fa-shopping-cart"></i>
+                        <span className="badge badge-light"> 0</span>
+                        </Button>
+                    </NavbarText>
                 </Collapse>
             </Navbar>
         </div>

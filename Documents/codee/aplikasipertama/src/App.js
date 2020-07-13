@@ -1,4 +1,5 @@
-import React, { createContext } from 'react';
+
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 //import Parent from './Component/Class/Parent';
 //import BootstrapComp from './Component/Class/BootstrapComp';
@@ -21,9 +22,13 @@ import { CartContext } from './CartContext';
 //import './App.css';
 
 const App = () => {
+
+const[value, setValue] = useState(1)
+
+
   return (
     <BrowserRouter>
-      <CartContext.Provider value="ini adalah data context">
+      <CartContext.Provider value={{value, setValue}}>
         <NavbarComp />
         <switch>
           <Route exact path="/" component={HomePage} />
