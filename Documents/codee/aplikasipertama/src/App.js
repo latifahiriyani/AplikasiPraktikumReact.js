@@ -24,7 +24,7 @@ import ProductComp from './Component/Hooks/Functional/ProductComp';
 
 const App = () => {
 
-const[value, setValue] = useState(10)
+const[value, setValue] = useState(0)
 
 
   return (

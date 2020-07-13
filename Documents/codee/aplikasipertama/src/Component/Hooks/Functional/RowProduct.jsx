@@ -3,8 +3,13 @@ import {
    Col, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import { useContext } from 'react';
+import { CartContext } from '../../../CartContext';
   
 function RowProduct() {
+
+    const{value, setValue} = useContext(CartContext) 
+    
     return(
         <Col>
          <Card>
@@ -13,7 +18,7 @@ function RowProduct() {
           <CardTitle>Lenovo</CardTitle>
           <CardSubtitle>Rp. 12.000.000</CardSubtitle>
           <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Tambah Keranjang</Button>
+          <Button onClick={()=>setValue(value+1)}>Tambah Keranjang</Button>
         </CardBody>
       </Card>
         </Col>
