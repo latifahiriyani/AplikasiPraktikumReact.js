@@ -6,13 +6,14 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
+    NavbarText,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
+    
 } from 'reactstrap';
+import {NavLink} from 'react-router-dom'
 import {Button} from 'reactstrap'
 import { useContext } from 'react';
 import { CartContext } from '../../CartContext';
@@ -32,25 +33,25 @@ const NavbarComp = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <NavLink to="/" className="nav-link">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/about">About</NavLink>
+                            <NavLink to="/about" className="nav-link">About</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/mahasiswa">Mahasiswa</NavLink>
+                            <NavLink to="/mahasiswa" className="nav-link">Mahasiswa</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/kelas">Class</NavLink>
+                            <NavLink to="/kelas" className="nav-link">Class</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/hooks">Hook</NavLink>
+                            <NavLink to="/hooks" className="nav-link">Hook</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/useeffects">Use Effects</NavLink>
+                            <NavLink to="/useeffects" className="nav-link">Use Effects</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/produk">Produk</NavLink>
+                            <NavLink to="/produk" className="nav-link">Produk</NavLink>
                         </NavItem>
                     </Nav>
                     <NavbarText>
