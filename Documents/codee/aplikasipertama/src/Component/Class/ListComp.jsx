@@ -64,7 +64,7 @@ class ListComp extends PureComponent {
                 <Alert color="success" style={{display: this.state.display}}>
                 {this.state.response}
             </Alert>
-                <NavLink href="/mahasiswa/tambah"><button color="success">Tambah Data</button></NavLink>
+                <NavLink href="/mahasiswa/tambah"><Button color="success">Tambah Data</Button></NavLink>
                 <hr/>
                 <Table className="table-bordered">
                     <thead>
