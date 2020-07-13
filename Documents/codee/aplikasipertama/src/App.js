@@ -14,6 +14,7 @@ import KelasComp from './Component/Hooks/Class/KelasComp';
 import HooksComp from './Component/Hooks/Functional/HooksComp';
 import HooksUseEffect from './Component/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CartContext';
+import ProductComp from './Component/Hooks/Functional/ProductComp';
 
 
 //import logo from './logo.svg';
@@ -23,7 +24,7 @@ import { CartContext } from './CartContext';
 
 const App = () => {
 
-const[value, setValue] = useState(1)
+const[value, setValue] = useState(10)
 
 
   return (
@@ -39,7 +40,7 @@ const[value, setValue] = useState(1)
           <Route exact path="/kelas" component={KelasComp} />
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffect} />
-
+          <Route exact path="/produk" component={ProductComp} />
 
           {/*<Route exact path="/detail/:id" component={DetailComp} />*/}
         </switch>
