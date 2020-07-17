@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card, CardImg, Button } from 'reactstrap'
 import React, {useReducer} from 'react'
+import {NavLink} from 'react-router-dom'
 
 const initialState = {
     jumlah: 1,
@@ -50,6 +51,8 @@ function HookReducer() {
                     </Row>
                     <br/>
                     <Button color="success" size="lg"> Total Rp. {count.hargatotal}</Button>
+                    <hr/>
+                    <NavLink to='/tagihan'>Tagihan Belanja</NavLink>
                 </Col>
             </Row>
         </Container>

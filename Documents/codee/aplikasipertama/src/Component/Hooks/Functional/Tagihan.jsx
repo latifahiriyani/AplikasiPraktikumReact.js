@@ -6,7 +6,7 @@ function Tagihan() {
         <Container>
             <Jumbotron>
         <h1 className="display-3">Tagihan</h1>
-        <p className="lead">Action Figure Naruto.</p>
+        <p className="lead">(1x) Action Figure Naruto.</p>
         <hr className="my-2" />
         <p>Harga Total Rp. 400000 .</p>
         <p className="lead">
