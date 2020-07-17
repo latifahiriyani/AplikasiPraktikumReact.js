@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 //import Parent from './Component/Class/Parent';
 //import BootstrapComp from './Component/Class/BootstrapComp';
@@ -17,6 +17,30 @@ import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
 import HookReducer from './Component/Hooks/Functional/HookReducer';
 
+export const keranjangContext = createContext()
+
+const initialState = {
+  jumlah: 1,
+  hargasatuan: 10000,
+  hargatotal: 10000
+}
+
+const reducer = (state, action) => {
+  switch(action. type){
+      case 'tambah': return {
+          ...state,
+          jumlah: state.jumlah + 1,
+          hargatotal: state.hargasatuan + (state.hargasatuan * state.jumlah)
+      }
+      case 'kurang': return {
+          ...state,
+          jumlah: state.jumlah - 1,
+          hargatotal: (state.hargasatuan * state.jumlah) - state.hargasatuan
+      }
+      default:
+      return state
+  }
+}
 
 //import logo from './logo.svg';
 //import Home from './Component/Fungsional/Home';
@@ -25,13 +49,17 @@ import HookReducer from './Component/Hooks/Functional/HookReducer';
 
 const App = () => {
 
+
+
 const[value, setValue] = useState(0)
 
+const[count, dispatch] = useReducer(reducer, initialState)
 
   return (
     <BrowserRouter>
       <CartContext.Provider value={{value, setValue}}>
         <NavbarComp />
+      <keranjangContext.Provider value={{keranjangState: count, keranjangDispatch:dispatch}}>
         <switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={About} />
@@ -46,6 +74,7 @@ const[value, setValue] = useState(0)
 
           {/*<Route exact path="/detail/:id" component={DetailComp} />*/}
         </switch>
+        </keranjangContext.Provider>
       </CartContext.Provider>
     </BrowserRouter>
 
