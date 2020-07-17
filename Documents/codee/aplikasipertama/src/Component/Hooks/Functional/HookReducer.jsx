@@ -1,7 +1,20 @@
-import { Container, Row, Col, Card, CardImg } from 'reactstrap'
-import React from 'react'
+import { Container, Row, Col, Card, CardImg, Button } from 'reactstrap'
+import React, {useReducer} from 'react'
+
+const initialState = 0
+
+const reducer = (state, action) => {
+    switch(action){
+        case 'tambah': return state + 1
+        case 'kurang': return state -1
+        default:
+        return state
+    }
+}
 
 function HookReducer() {
+
+    const[count, dispatch] = useReducer(reducer, initialState)
     return (
         <Container>
             <br/>
@@ -12,7 +25,17 @@ function HookReducer() {
 
                     </Card>
                 </Col>
-                <Col xs="6">col 2</Col>
+                <Col xs="6">
+                    <h3> Action Figure Naruto</h3>
+                    <p>Harga</p>
+                    <h3>Rp. 152.000</h3>
+                    <p>Jumlah</p>
+                    <Row>
+                        <Col><Button onClick={()=>dispatch('tambah')} color="danger">+</Button></Col>
+                        <Col>{count}</Col>
+                        <Col><Button onClick={()=>dispatch('kurang')}>-</Button></Col>
+                    </Row>
+                </Col>
             </Row>
         </Container>
     )
