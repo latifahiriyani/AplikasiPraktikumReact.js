@@ -1,5 +1,5 @@
 
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useReducer } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 //import Parent from './Component/Class/Parent';
 //import BootstrapComp from './Component/Class/BootstrapComp';
@@ -16,6 +16,7 @@ import HooksUseEffect from './Component/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
 import HookReducer from './Component/Hooks/Functional/HookReducer';
+import Tagihan from './Component/Hooks/Functional/Tagihan';
 
 export const keranjangContext = createContext()
 
@@ -71,6 +72,7 @@ const[count, dispatch] = useReducer(reducer, initialState)
           <Route exact path="/useeffects" component={HooksUseEffect} />
           <Route exact path="/produk" component={ProductComp} />
           <Route exact path="/reducer" component= {HookReducer} />
+          <Route exact path="/tagihan" component= {Tagihan} />
 
           {/*<Route exact path="/detail/:id" component={DetailComp} />*/}
         </switch>
