@@ -15,6 +15,7 @@ import HooksComp from './Component/Hooks/Functional/HooksComp';
 import HooksUseEffect from './Component/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
+import HookReducer from './Component/Hooks/Functional/HookReducer';
 
 
 //import logo from './logo.svg';
@@ -41,6 +42,7 @@ const[value, setValue] = useState(0)
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffect} />
           <Route exact path="/produk" component={ProductComp} />
+          <Route exact path="/reducer" component= {HookReducer} />
 
           {/*<Route exact path="/detail/:id" component={DetailComp} />*/}
         </switch>
