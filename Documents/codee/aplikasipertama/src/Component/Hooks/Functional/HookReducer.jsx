@@ -34,7 +34,10 @@ function HookReducer() {
                         <Col><Button onClick={()=>dispatch('tambah')} color="danger">+</Button></Col>
                         <Col>{count}</Col>
                         <Col><Button onClick={()=>dispatch('kurang')}>-</Button></Col>
+                    
                     </Row>
+                    <br/>
+                    <Button color="success" size="lg"> Total Rp. 500000</Button>
                 </Col>
             </Row>
         </Container>
